@@ -104,6 +104,25 @@ class GameMapInterface extends GameInterfaces {
         });
 
 
+        ctx.fillStyle = "white";
+        ctx.font = "bold 70px sans-serif";
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur = "";
+
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "center";
+        const date = new Date();
+        ctx.fillText(`${date.getHours().toLocaleString('en-US', {
+            minimumIntegerDigits: 2,
+            useGrouping: false
+        })}:${date.getMinutes().toLocaleString('en-US', {
+            minimumIntegerDigits: 2,
+            useGrouping: false
+        })}:${date.getSeconds().toLocaleString('en-US', {
+            minimumIntegerDigits: 2,
+            useGrouping: false
+        })}`, Width / 2, Height / 2);
+
         // this.needsUpdate = false;
     }
 
